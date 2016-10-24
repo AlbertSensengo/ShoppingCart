@@ -14,10 +14,10 @@ namespace ShoppingCartTest
         {
             //arrange 
             var target = new ShoppingProduct();
-            var products = this.GetProduct();
+            var products = this.GetProductStep1();
 
             //act
-            int actual = target.CalculateFee(products);
+            double actual = target.CalculateFee(products);
 
             //assert
             var expected = 100;
@@ -25,7 +25,7 @@ namespace ShoppingCartTest
             Assert.AreEqual(expected, actual);
         }
 
-        private List<Product> GetProduct()
+        private List<Product> GetProductStep1()
         {
             return new List<Product>()
             {
@@ -42,6 +42,64 @@ namespace ShoppingCartTest
                     Episode = 2,
                     Price = 100,
                     Quantity = 0
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 3,
+                    Price = 100,
+                    Quantity = 0
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 4,
+                    Price = 100,
+                    Quantity = 0
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 5,
+                    Price = 100,
+                    Quantity = 0
+                }
+            };
+        }
+
+        [TestMethod]
+        public void 第一集買了一本第二集也買了一本價格應為190()
+        {
+            //arrange 
+            var target = new ShoppingProduct();
+            var products = this.GetProductStep2();
+
+            //act
+            double actual = target.CalculateFee(products);
+
+            //assert
+            var expected = 190;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        private List<Product> GetProductStep2()
+        {
+            return new List<Product>()
+            {
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 1,
+                    Price = 100,
+                    Quantity = 1
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 2,
+                    Price = 100,
+                    Quantity = 1
                 },
                 new Product() {
                     Type = ProductEnum.Type.Book,
