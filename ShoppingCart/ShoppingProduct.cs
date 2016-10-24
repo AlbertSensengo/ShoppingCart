@@ -10,7 +10,9 @@ namespace ShoppingCart
     {
         public int CalculateFee(List<Product> products)
         {
-            return 100;
+            //Step1:一到五集的哈利波特，每一本都是賣100元
+            return products.Where(t => t.Type == ProductEnum.Type.Book)
+                           .Sum(u => u.Price * u.Quantity);
         }
     }
 }

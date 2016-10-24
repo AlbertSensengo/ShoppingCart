@@ -30,35 +30,35 @@ namespace ShoppingCartTest
             return new List<Product>()
             {
                 new Product() {
-                    Type = "Book",
+                    Type = ProductEnum.Type.Book,
                     Name = "Potter",
                     Episode = 1,
                     Price = 100,
                     Quantity = 1
                 },
                 new Product() {
-                    Type =  "Book",
+                    Type = ProductEnum.Type.Book,
                     Name = "Potter",
                     Episode = 2,
                     Price = 100,
                     Quantity = 0
                 },
                 new Product() {
-                    Type =  "Book",
+                    Type = ProductEnum.Type.Book,
                     Name = "Potter",
                     Episode = 3,
                     Price = 100,
                     Quantity = 0
                 },
                 new Product() {
-                    Type =  "Book",
+                    Type = ProductEnum.Type.Book,
                     Name = "Potter",
                     Episode = 4,
                     Price = 100,
                     Quantity = 0
                 },
                 new Product() {
-                    Type =  "Book",
+                    Type = ProductEnum.Type.Book,
                     Name = "Potter",
                     Episode = 5,
                     Price = 100,
