@@ -298,5 +298,63 @@ namespace ShoppingCartTest
                 }
             };
         }
+
+        [TestMethod]
+        public void 一二集各買了一本第三集買了兩本價格應為370()
+        {
+            //arrange 
+            var target = new ShoppingProduct();
+            var products = this.GetProductStep6();
+
+            //act
+            double actual = target.CalculateFee(products);
+
+            //assert
+            var expected = 370;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        private List<Product> GetProductStep6()
+        {
+            return new List<Product>()
+            {
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 1,
+                    Price = 100,
+                    Quantity = 1
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 2,
+                    Price = 100,
+                    Quantity = 1
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 3,
+                    Price = 100,
+                    Quantity = 2
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 4,
+                    Price = 100,
+                    Quantity = 0
+                },
+                new Product() {
+                    Type = ProductEnum.Type.Book,
+                    Name = "Potter",
+                    Episode = 5,
+                    Price = 100,
+                    Quantity = 0
+                }
+            };
+        }
     }
 }

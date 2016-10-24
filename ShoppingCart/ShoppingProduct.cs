@@ -22,6 +22,7 @@ namespace ShoppingCart
 
             double[] ruleDiscount = new double[5] {1, 0.95, 0.9, 0.8, 0.75};
 
+
             double discount = ruleDiscount[totalEpisode - 1];
 
             return sum * discount;
